@@ -1,0 +1,52 @@
+version: '3'
+networks:
+  1panel-network:
+    external: true
+services:
+  directus:
+    container_name: directus
+    image: directus/directus:latest
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - 8055:8055
+    volumes:
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    environment:
+      # Linux 下执行 cat /proc/sys/kernel/random/uuid
+      KEY: 'ca4c761b-776a-463e-824f-b630afab12ae'
+      SECRET: 'f17eff9a-2276-4ba0-8cbf-b43c50c5dab4'
+
+      # Database
+      DB_CLIENT: 'pg'
+      DB_HOST: 'postgresql'
+      DB_PORT: '5432'
+      DB_DATABASE: 'directus'
+      DB_USER: 'directus'
+      DB_PASSWORD: 'kZPrnKfHWQQd2rnm'
+
+      # Redis
+      # (see https://docs.directus.io/self-hosted/config-options.html#redis)
+      REDIS_HOST: 'redis'
+      REDIS_PORT: '6379'
+      REDIS_USERNAME: 'default'
+      REDIS_PASSWORD: 'cStGbDYZ3TxEhaYw'
+
+      # CORS
+      CORS_ENABLED: 'true'
+      REFRESH_TOKEN_COOKIE_DOMAIN: 'localhost'
+      EXTENSIONS_AUTO_RELOAD: 'true'
+      WEBSOCKETS_ENABLED: 'true'
+
+      # Admin Account
+      ADMIN_EMAIL: 'admin@hencte.top'
+      ADMIN_PASSWORD: 'admin.Flous'
+
+      # Make sure to set this in production
+      # (see https://docs.directus.io/self-hosted/config-options#general)
+      PUBLIC_URL: 'https://directus.hencte.top'
+
+      # 遥测，这里我们不让 directus 遥测我们的相关信息
+      TELEMETRY: false

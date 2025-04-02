@@ -15,9 +15,9 @@ setting up a development environment using the official Directus repository.
 
 ### Set up your Directus Dev Instance
 
-1.  Clone the official [Directus GitHub repository](https://github.com/directus/directus) and make sure you have the
+1. Clone the official [Directus GitHub repository](https://github.com/directus/directus) and make sure you have the
     dependencies installed (`pnpm i`) and build everything (`pnpm build`)!
-2.  Create a new database (sqlite is recommended for development) and add the env config in `api/.env`
+2. Create a new database (sqlite is recommended for development) and add the env config in `api/.env`
 
     <details><summary>Example .env file</summary>
 
@@ -39,16 +39,16 @@ setting up a development environment using the official Directus repository.
 
     </details>
 
-3.  Double check that the following env vars are set:
+3. Double check that the following env vars are set:
 
     ```sh
      CONTENT_SECURITY_POLICY_DIRECTIVES__FRAME_SRC=http://localhost:3000
      CACHE_AUTO_PURGE=true
     ```
 
-4.  Run `pnpm --filter api cli bootstrap` to set up the db
-5.  Run the dev servers: `pnpm --filter api dev` and `pnpm --filter app dev`
-6.  Login to Directus Studio, create a token for your user and have it ready
+4. Run `pnpm --filter api cli bootstrap` to set up the db
+5. Run the dev servers: `pnpm --filter api dev` and `pnpm --filter app dev`
+6. Login to Directus Studio, create a token for your user and have it ready
 
 ### Set up the test website
 
@@ -131,7 +131,7 @@ pnpm visual-editing:dev--methods # http://localhost:3000
 pnpm visual-editing:ssg # http://localhost:3000/blog/why-steampunk-rabbits-are-the-future-of-work
 ```
 
-### Rendering modes:
+### Rendering modes
 
 - Monolith / server only rendering: use as with PHP
 - SSG: live data only on hydration
@@ -158,19 +158,19 @@ pnpm visual-editing:ssg # http://localhost:3000/blog/why-steampunk-rabbits-are-t
   - Rendering modes: `dev` || `ssr`
   - Search for `testCase === 'refresh'`
 - `refresh-customized`
-  - The best way to see this on the test website is to open this page in the Visual Editor: http://localhost:3000/blog
+  - The best way to see this on the test website is to open this page in the Visual Editor: <http://localhost:3000/blog>
   - Exactly the same as `refresh` above, except that custom classes are attached to some editable elements to
     demonstrate customizability.
   - Rendering modes: `dev` || `ssr`
   - Search for `testCase === 'refresh-customized'`
 - `methods`
-  - The best way to see this on the test website is to open this page in the Visual Editor: http://localhost:3000
+  - The best way to see this on the test website is to open this page in the Visual Editor: <http://localhost:3000>
   - Exactly the same as `basic` above, except that there are buttons to test some useful functions/methods
   - Rendering modes: `dev` || `ssr`
   - Search for `testCase === 'methods'`
 - `refresh-ssg`
   - The best way to see this on the test website is to open this page in the Visual Editor:
-    http://localhost:3000/blog/why-steampunk-rabbits-are-the-future-of-work
+    <http://localhost:3000/blog/why-steampunk-rabbits-are-the-future-of-work>
   - Exactly the same as `refresh` above, except that it is only available for SSG and on a blog page `/blog/[slug]`
   - Rendering modes: `ssg`
   - Search for `testCase === 'refresh-ssg’`
