@@ -51,7 +51,7 @@
 	},
 	"dependencies": {
 		"@directus/sdk": "19.0.0",
-		"@directus/visual-editing": "link:../../..",
+		"@directus/visual-editing": "^1.0.1",
 		"@formkit/auto-animate": "0.8.2",
 		"@hookform/resolvers": "^3.10.0",
 		"@nuxt/icon": "1.10.3",
