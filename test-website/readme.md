@@ -1,9 +1,9 @@
+# Test Website
+
 > [!NOTE]
 >
 > The following test website and guide are intended to be used or testing and development purposes, not for production
 > use!
-
-# Test Website
 
 This test website is based on the Simple CMS Starter Template of [@directus-labs](https://github.com/directus-labs/).
 
@@ -19,7 +19,7 @@ setting up a development environment using the official Directus repository.
     dependencies installed (`pnpm i`) and build everything (`pnpm build`)!
 2. Create a new database (sqlite is recommended for development) and add the env config in `api/.env`
 
-    <details><summary>Example .env file</summary>
+    **Example .env file**
 
     ```sh
     PUBLIC_URL=http://localhost:8080
@@ -36,8 +36,6 @@ setting up a development environment using the official Directus repository.
     DB_CLIENT=sqlite3
     DB_FILENAME=db.sqlite3
     ```
-
-    </details>
 
 3. Double check that the following env vars are set:
 

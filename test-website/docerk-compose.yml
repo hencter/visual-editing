@@ -14,6 +14,8 @@ services:
     volumes:
       - ./uploads:/directus/uploads
       - ./extensions:/directus/extensions
+    env_file:
+      - 1panel.env
     environment:
       # Linux 下执行 cat /proc/sys/kernel/random/uuid
       KEY: 'ca4c761b-776a-463e-824f-b630afab12ae'
@@ -36,6 +38,7 @@ services:
 
       # CORS
       CORS_ENABLED: 'true'
+      CORS_ORIGIN: 'https://nuxt.hencte.top'
       REFRESH_TOKEN_COOKIE_DOMAIN: 'localhost'
       EXTENSIONS_AUTO_RELOAD: 'true'
       WEBSOCKETS_ENABLED: 'true'
